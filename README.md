@@ -1,2 +1,18 @@
-# Day-01-Dependency-Injection
-A hands-on guide to .NET 8 Dependency Injection. This repo demonstrates migrating from legacy instantiation to a decoupled architecture using ILoggerService and Host.CreateApplicationBuilder. Master IoC, service lifetimes (Transient/Singleton), and the "one-line swap" to switch between Console and File logging without touching business logic.
+# Day 1: Modern .NET DI Patterns
+
+## 🎯 Goal
+Migrate from legacy "new is glue" instantiation to Modern .NET 8 Dependency Injection.
+
+## 📝 The Challenge
+**Scenario:** "The Logger Swap"
+1. **Define Contract:** Create an `ILoggerService` interface.
+2. **Implement:** Create `ConsoleLogger` (writes to screen) and `FileLogger` (writes to disk).
+3. **Compose:** Use `Host.CreateApplicationBuilder` to register services.
+4. **Execute:** Inject the logger into an `OrderProcessor` service to simulate business logic.
+5. **Verify:** Demonstrate that switching from Console to File logging requires changing *only one line* in `Program.cs`.
+
+## 🧠 Key Concepts Demonstrated
+- **Inversion of Control (IoC):** High-level modules (OrderProcessor) depend on abstractions (ILogger), not details.
+- **Service Lifetimes:**
+  - **Transient:** Created every time.
+  - **Singleton:** Created once, lives forever.
