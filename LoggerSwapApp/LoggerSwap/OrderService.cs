@@ -6,17 +6,16 @@ namespace LoggerSwap
 {
     public class OrderService
     {
-        private readonly IServiceProvider _serviceProvider;
-        public OrderService(IServiceProvider serviceProvider)
+        private readonly ILogger _logger;
+        public OrderService(ILogger logger)
         {
-            _serviceProvider = serviceProvider;
+            _logger = logger;
         }
 
         public void ProcessOrder(string orderId)
         {
-            var logger = _serviceProvider.GetService(typeof(ILogger)) as ILogger;
-            logger.Log($"Order started {orderId}");
-            logger.Log($"Order finished {orderId}");
+            _logger.Log($"Order started {orderId}");
+            _logger.Log($"Order finished {orderId}");
         }
     }
 }
