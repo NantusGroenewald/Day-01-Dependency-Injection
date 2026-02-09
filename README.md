@@ -1,7 +1,7 @@
 # Day 1: Modern .NET DI Patterns
 
 ## 🎯 Goal
-Migrate from legacy "new is glue" instantiation to Modern .NET 8 Dependency Injection.
+Migrate from legacy "new is glue" instantiation to Modern .NET 10 Dependency Injection.
 
 ## 📝 The Challenge
 **Scenario:** "The Logger Swap"
